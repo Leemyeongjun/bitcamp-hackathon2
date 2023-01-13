@@ -1,0 +1,59 @@
+body {
+	display: grid;
+	align-items: center;
+	text-align: center;
+	justify-content: center;
+}
+
+#header {
+	width: 1000px;
+	height: 150px;
+	border: 1px solid;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	text-align: center;
+}
+
+#body {
+	display: grid;
+	grid-template-rows: 100px 400px 300px;
+	width: 1000px;
+	height: 850px;
+	border: 1px solid;
+}
+
+#footer {
+	width: 1000px;
+	height: 150px;
+	border: 1px solid;
+}
+
+#header div:first-child {
+	margin-left: 60px;
+	width: 200px;
+	height: 50px;
+	border: 1px solid;
+}
+
+#header div:last-child {
+	margin-right: 80px;
+	width: 300px;
+	height: 50px;
+	border: 1px solid;
+}
+
+.list1 {
+	margin: 20px;
+	border: 1px solid;
+}
+
+.list2 {
+	margin: 20px;
+	border: 1px solid;
+}
+
+.list3 {
+	margin: 20px;
+	border: 1px solid;
+}
