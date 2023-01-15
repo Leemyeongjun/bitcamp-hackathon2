@@ -1,13 +1,19 @@
 package hackathon2.backend.vo;
 
 public class Info {
+  private int no;
   private String name;
   private String id;
-  private String nickName;
   private String password;
   private String tel;
   private String createdDate;
 
+  public int getNo() {
+    return no;
+  }
+  public void setNo(int no) {
+    this.no = no;
+  }
   public String getName() {
     return name;
   }
@@ -37,11 +43,5 @@ public class Info {
   }
   public void setCreatedDate(String createdDate) {
     this.createdDate = createdDate;
-  }
-  public String getNickName() {
-    return nickName;
-  }
-  public void setNickName(String nickName) {
-    this.nickName = nickName;
   }
 }

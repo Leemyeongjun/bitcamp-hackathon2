@@ -220,8 +220,145 @@
 	margin-left: 15px;
 }
 
-.view-body {
-	height: 1200px;
+.list2 {
+	display: grid;
+	height: 1000px;
+	border: 1px solid;
 }
 
-.list
+.list2-one ul {
+	padding-top: 10px;
+	padding-left: 170px;
+	display: flex;
+	float: left;
+}
+
+.list2-one ul li {
+	cursor: pointer;
+	font-size: 16px;
+	font-weight: bold;
+	padding-left: 40px;
+	list-style: none;
+}
+
+.list2-two {
+	display: flex;
+	border: 1px solid;
+	width: 1100px;
+	height: 200px;
+	margin-left: 220px;
+}
+
+.list2-review {
+	display: flex;
+	flex-wrap: wrap;
+	width: 1100px;
+	height: 620px;
+	border: 1px solid;
+	margin-left: 220px;
+	align-items: center;
+	justify-content: center;
+	background-color: #ebebeb;
+}
+
+.review-header {
+	background-color: white;
+	display: grid;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid;
+	width: 800px;
+	height: 170px;
+	margin: 10px;
+}
+
+.review-body {
+	border: 1px solid;
+	width: 800px;
+	height: 400px;
+	margin: 10px;
+	overflow: scroll;
+	background-color: white;
+}
+
+.review-header-text {
+	margin-left: 285px;
+	width: 50px;
+	border: 1px solid ebebeb;
+	border-radius: 10px;
+}
+
+.content-input {
+	margin-bottom: 10px;
+	display: flex;
+}
+
+.content {
+	width: 550px;
+}
+
+.content-btn {
+	cursor: pointer;
+	width: 70px;
+	margin-left: 5px;
+	border: 1px solid;
+	text-align: center;
+}
+
+.star_rating {font-size:0; letter-spacing:-4px;}
+
+.star_rating ul {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-right: 35px;
+}
+
+.star_rating ul li {
+	cursor: pointer;
+    font-size:22px;
+    letter-spacing:0;
+    display:inline-block;
+    margin-left:5px;
+	color: lightgray;
+}
+
+.list2-two {
+	height: 270px;
+	align-items: center;
+	padding-left: 30px;
+}
+
+.main-info p {
+	font-size: 22px;
+	font-weight: bold;
+	padding-left: 30px;
+}
+
+.main-info ul li:first-child {
+	padding-bottom: 10px;
+	border-bottom: 1px solid lightgray;
+	margin-bottom: 15px;
+}
+
+.main-info ul li {
+	font-size: 14px;
+	font-weight: 550;
+	list-style: none;
+}
+
+.make-btn {
+	cursor: pointer;
+	display: flex;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	width: 90px;
+	height: 35px;
+	margin-top: 20px;
+	border: 1px solid;
+	border-radius: 5px;
+	color: white;
+	background-color: #fb4357;
+}
