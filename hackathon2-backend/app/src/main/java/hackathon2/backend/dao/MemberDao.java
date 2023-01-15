@@ -5,7 +5,6 @@ import java.util.Date;
 import org.springframework.stereotype.Repository;
 import hackathon2.backend.vo.Member;
 
-
 @Repository
 public class MemberDao {
   private static final int SIZE = 100;

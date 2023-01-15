@@ -5,6 +5,7 @@ public class Info {
   private String name;
   private String id;
   private String password;
+  private String nickName; // 회원 닉네임
   private String tel;
   private String createdDate;
 
@@ -43,5 +44,11 @@ public class Info {
   }
   public void setCreatedDate(String createdDate) {
     this.createdDate = createdDate;
+  }
+  public String getNickName() {
+    return nickName;
+  }
+  public void setNickName(String nickName) {
+    this.nickName = nickName;
   }
 }

@@ -362,3 +362,20 @@
 	color: white;
 	background-color: #fb4357;
 }
+
+.review1 {
+	width: 700px;
+	height: 140px;
+	border: 1px solid;
+	border-radius: 3px;
+	margin-top: 30px;
+	padding-top: 50px;
+	padding-left: 30px;
+}
+
+.review-border {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	list-style: none;
+}
