@@ -1,13 +1,19 @@
 
+(function() {
+  document.querySelector('.header1').addEventListener('click', function() {
+    location.href='index.html';
+  });
 
+  document.querySelector('#login').addEventListener('click', function() {
+    location.href='login.html';
+  });
 
-function info() {
-	let xhr = new XMLHttpRequest();
+  document.querySelector('#sign').addEventListener('click', function() {
+    location.href='sign.html';
+  });
 
-  xhr.open(
-    "GET",
-    "http://localhost:3000/hackathon", false);
-  xhr.send();
+  document.querySelector('#mybox').addEventListener('click', function() {
+    location.href='mybox.html';
+  });
 
-  info = JSON.parse(xhr.responseText);
-}
+})();
