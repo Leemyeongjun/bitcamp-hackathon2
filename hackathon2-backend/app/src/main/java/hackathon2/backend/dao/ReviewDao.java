@@ -1,5 +1,6 @@
 package hackathon2.backend.dao;
 
+import java.sql.Date;
 import java.util.Arrays;
 import org.springframework.stereotype.Repository;
 import hackathon2.backend.vo.Review;
@@ -8,12 +9,13 @@ import hackathon2.backend.vo.Review;
 public class ReviewDao {
   private static final int SIZE = 100;
 
-  private int no; // review 식별 번호
+  private int no;
   private int count;
   private Review[] reviews = new Review[SIZE];
 
   public void insert(Review review) {
     review.setNo(++no);
+    review.setCreatedDate(new Date(System.currentTimeMillis()).toString());
     this.reviews[this.count++] = review;
   }
 

@@ -3,6 +3,7 @@ package hackathon2.backend.vo;
 public class Review {
   private int no;
   private String content;
+  private String password;
   private String createdDate;
 
   public int getNo() {
@@ -16,6 +17,12 @@ public class Review {
   }
   public void setContent(String content) {
     this.content = content;
+  }
+  public String getPassword() {
+    return password;
+  }
+  public void setPassword(String password) {
+    this.password = password;
   }
   public String getCreatedDate() {
     return createdDate;

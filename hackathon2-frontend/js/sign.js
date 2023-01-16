@@ -5,15 +5,13 @@ document.querySelector('#add-btn').onclick = (e) => {
     var id = document.querySelector('#f-id').value;
     var password = encodeURIComponent(document.querySelector('#f-password').value);
     var nickName = encodeURIComponent(document.querySelector('#f-nickName').value);
-    var gender = document.querySelector('#f-gender-w').checked ? 'W' : 'M';
 
     fetch('http://localhost:8080/members', {
         method: 'POST',
         headers: {
             'Content-type': 'application/x-www-form-urlencoded'
         },
-        body: `name=${name}&tel=${tel}&id=${id}&password=${password}&nickName=${nickName}` +
-            `&gender=${gender}`
+        body: `name=${name}&tel=${tel}&id=${id}&password=${password}&nickName=${nickName}`
         })
         .then((response) => {return response.json();})
         .then((obj) => {

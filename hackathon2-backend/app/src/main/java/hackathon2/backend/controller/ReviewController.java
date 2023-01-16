@@ -15,6 +15,7 @@ import hackathon2.backend.vo.Review;
 
 @RestController
 public class ReviewController {
+
   ReviewDao reviewDao = new ReviewDao();
 
   public ReviewController(ReviewDao reviewDao) {
@@ -24,10 +25,12 @@ public class ReviewController {
   @PostMapping("/reviews")
   public Object addReview(
       @RequestParam(required = false) String title,
-      @RequestParam(required = false) String content) {
+      @RequestParam(required = false) String content,
+      @RequestParam(required = false) String password){
 
     Review r = new Review();
     r.setContent(content);
+    r.setPassword(password);
     r.setCreatedDate(new Date(System.currentTimeMillis()).toString());
 
     this.reviewDao.insert(r);
@@ -74,23 +77,25 @@ public class ReviewController {
   @PutMapping("/reviews/{reviewNo}")
   public Object updateReview(
       @PathVariable int reviewNo,
-      @RequestParam(required = false) String content) {
+      @RequestParam(required = false) String content,
+      @RequestParam(required = false) String password){
 
     Map<String,Object> contentMap = new HashMap<>();
 
     Review old = this.reviewDao.findByNo(reviewNo);
-    if (old == null) {
+    if (old == null || !old.getPassword().equals(password)) {
       contentMap.put("status", "failure");
       contentMap.put("data", "게시글이 없거나 암호가 맞지 않습니다.");
       return contentMap;
     }
 
-    Review b = new Review();
-    b.setNo(reviewNo);
-    b.setContent(content);
-    b.setCreatedDate(old.getCreatedDate());
+    Review r = new Review();
+    r.setNo(reviewNo);
+    r.setContent(content);
+    r.setPassword(password);
+    r.setCreatedDate(old.getCreatedDate());
 
-    this.reviewDao.update(b);
+    this.reviewDao.update(r);
 
     contentMap.put("status", "success");
 
@@ -107,7 +112,7 @@ public class ReviewController {
     // 응답 결과를 담을 맵 객체 준비
     Map<String,Object> contentMap = new HashMap<>();
 
-    if (r == null) {
+    if (r == null || !r.getPassword().equals(password)) {
       contentMap.put("status", "failure");
       contentMap.put("data", "게시글이 없거나 암호가 맞지 않습니다.");
 

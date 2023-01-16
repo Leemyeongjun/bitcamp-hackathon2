@@ -10,32 +10,55 @@ const star5 = document.querySelector('#star-btn5');
 
   review();
 
+  reivews();
+
 })();
 
 function review() {
   document.querySelector('#add-btn').onclick = (e) => {
     var content = encodeURIComponent(document.querySelector('#f-content').value);
+    var password = document.querySelector('#f-password').value;
   
     fetch('http://localhost:8080/reviews', {
       method: 'POST',
       headers: {
         'Content-type': 'application/x-www-form-urlencoded'
       },
-      body: `content=${content}`
+      body: `content=${content}&password=${password}`
     })
     .then((response) => {return response.json();})
     .then((obj) => {
-      var html = '';
-
-      html = `${content}`;
-
-      document.querySelector('#review1').innerHTML = html;
+      location.reload();
     })
     .catch((err) => {
       alert("서버 요청 오류!");
       console.log(err);
     });
   };
+}
+
+function reivews() {
+  fetch('http://localhost:8080/reviews')
+  .then((response) => {return response.json();})
+  .then((obj) => {
+    var html = '';
+    for (var r of obj.data) {
+      html += `<tr>
+        <td>${r.no}</td>
+        <td>${r.createdDate}</td>
+        <td>${r.content}</td>
+        <td><button>변경</button></td>
+        <td><button>삭제</button></td>
+        </tr>\n`;
+    }
+
+    console.log(html);
+    document.querySelector('tbody').innerHTML = html;
+  })
+  .catch((err) => {
+    alert("서버 요청 오류!");
+    console.log(err);
+  }); 
 }
 
 function starAction() {
