@@ -103,6 +103,7 @@
 }
 
 .footer {
+	position: relative;
 	background-color: #ebebeb;
 	height: 80px;
 	border: 1px solid;
@@ -399,4 +400,8 @@
 	grid-template-columns: 100px 100px 100px 70px 70px;
 	align-items: center;
 	justify-content: center;
+}
+
+.main {
+	width: 1910px;
 }
