@@ -48,17 +48,42 @@ function reivews() {
         <td>${r.createdDate}</td>
         <td>${r.content}</td>
         <td><button>변경</button></td>
-        <td><button>삭제</button></td>
+        <td><button onclick='remove()' id='delete-btn'>삭제</button></td>
         </tr>\n`;
     }
 
-    console.log(html);
     document.querySelector('tbody').innerHTML = html;
   })
   .catch((err) => {
     alert("서버 요청 오류!");
     console.log(err);
   }); 
+}
+
+function remove() {
+    var password = prompt('암호를 입력하세요!');
+
+    document.querySelector('tbody tr').remove();
+    // fetch(`http://localhost:8080/reviews/${no}`, {
+    //   method: 'DELETE',
+    //   headers: {
+    //     'Content-type': 'application/x-www-form-urlencoded'
+    //   },
+    //   body: `password=${password}`
+    // })
+    // .then((response) => response.json())
+    // .then((obj) => {
+    //   if (obj.status == "failure") {
+    //     alert("게시글 삭제 오류!\n" + obj.data);
+    //     return;
+    //   }
+  
+    //   location.reload();
+    // })
+    // .catch((err) => {
+    //   alert("서버 요청 오류!");
+    //   console.log(err);
+    // });
 }
 
 function starAction() {
